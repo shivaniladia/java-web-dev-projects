@@ -2,14 +2,15 @@ package org.launchcode;
 
 public class Message {
 
-    public static String getMessage(String lang) {
-
+    public static String getMessage(String lang, String customMessage) {
         if (lang.equals("sp")) {
-            return "¡Hola, Mundo!";
+            return customMessage; // Return the custom message for Spanish
         } else if (lang.equals("fr")) {
-            return "Bonjour, le monde!";
-        } else {
-            return "Hello, World!";
+            return customMessage; // Return the custom message for French
+        } else if (lang.equals("hi")) {
+            return "Namaste, Dunia!"; // Return the custom message for Hindi
         }
+        return customMessage; // Return the custom message for other languages or the default message
     }
-}
+    }
+
