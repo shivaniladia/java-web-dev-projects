@@ -22,5 +22,20 @@ public class AliceInWonderland2 {
         String lowercaseSearchTerm = searchTerm.toLowerCase();
         boolean found = lowercaseSentence.contains(lowercaseSearchTerm);
 
+        // If the term was found, get its index and length
+        if (found) {
+            int index = lowercaseSentence.indexOf(lowercaseSearchTerm);
+            int length = searchTerm.length();
+            System.out.println("The term '" + searchTerm + "' was found at index " + index + " and its length is " + length + ".");
+
+            // Remove the word from the sentence
+            String updatedSentence = bookSentence.replaceFirst("(?i)" + searchTerm, "");
+            System.out.println("Updated sentence: " + updatedSentence);
+        } else {
+            System.out.println("The term '" + searchTerm + "' was not found in the sentence.");
+        }
+
+        // Close the scanner
+        input.close();
     }
 }
