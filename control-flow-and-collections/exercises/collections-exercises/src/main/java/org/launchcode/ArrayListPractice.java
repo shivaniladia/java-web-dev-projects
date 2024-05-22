@@ -1,6 +1,7 @@
 package org.launchcode;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ArrayListPractice {
 
@@ -42,16 +43,28 @@ public class ArrayListPractice {
         wordsList.add("melon");
         wordsList.add("peach");
 
-        // Call the method to print words with exactly 5 letters
-        printWordsWith5Letters(wordsList);
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the word length
+        System.out.print("Enter the word length to search for: ");
+        int wordLength = scanner.nextInt();
+
+        // Call the method to print words with the specified length
+        printWordsWithLength(wordsList, wordLength);
+
+        // Close the Scanner
+        scanner.close();
         }
-    // Method to print words with exactly 5 letters
-    public static void printWordsWith5Letters(ArrayList<String> words) {
-        System.out.println("Words with exactly 5 letters:");
-        for (String word : words) {
-            if (word.length() == 5) {
-                System.out.println(word);
+
+        // Method to print words with exactly 5 letters
+        public static void printWordsWith5Letters (ArrayList < String > words) {
+            System.out.println("Words with exactly 5 letters:");
+            for (String word : words) {
+                if (word.length() == 5) {
+                    System.out.println(word);
+                }
             }
         }
     }
-}
+
